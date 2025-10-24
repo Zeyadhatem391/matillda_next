@@ -62,9 +62,9 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
 
   return (
     <>
-      {/*  Navbar */}
+      {/*  Navbar  i need ->  bg-[url('/images/hero_2.jpg')] bg-center bg-no-repeat bg-cover*/}
       <nav
-        className=" flex sticky top-0 w-full h-20 bg-gray-900 items-center justify-between px-8 transition-all duration-500 z-50"
+        className="flex sticky top-0 w-full h-20 items-center justify-between  px-8 transition-all duration-500 z-50"
         dir={language === "ar" ? "rtl" : "ltr"}
       >
         {/* logo */}
@@ -80,7 +80,7 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
 
         {/* links */}
         <ul
-          className={` text-white text-lg font-medium transition-all duration-500 hidden lg:flex ${
+          className={` text-black text-lg font-medium transition-all duration-500 hidden lg:flex ${
             language === "ar" ? "flex-row-reverse mr-96" : "flex-row ml-96"
           }`}
         >
@@ -90,7 +90,7 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
                 <>
                   <button
                     onClick={toggleDropdown}
-                    className="flex items-center gap-2 hover:bg-gray-700 px-4  rounded-xl transition-all"
+                    className="flex items-center gap-2 hover:border-b-2 border-red-600 px-4 pb-1  rounded-xl transition-all"
                   >
                     {link.text}
                     <FaChevronDown
@@ -124,7 +124,7 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
               ) : (
                 <a
                   href={link.href}
-                  className="hover:bg-gray-700 px-4 py-2 rounded-xl transition-all"
+                  className="hover:border-b-2 border-red-600 px-4 pb-1 rounded-xl transition-all"
                 >
                   {link.text}
                 </a>
@@ -141,7 +141,7 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
           {language === "ar" ? "English" : "العربية"}
         </button>
 
-        <button onClick={toggleMenu} className="text-white text-2xl lg:hidden">
+        <button onClick={toggleMenu} className="text-black text-2xl lg:hidden">
           <FaBars />
         </button>
       </nav>

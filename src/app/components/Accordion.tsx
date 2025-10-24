@@ -39,7 +39,9 @@ export default function Accordion({ language }: AccordionProps) {
         : "Yes, we develop desktop applications using technologies like Electron and .NET to suit enterprise needs.",
     },
     {
-      category: isAr ? "قواعد البيانات والتحليلات" : "Database & Analytics Services",
+      category: isAr
+        ? "قواعد البيانات والتحليلات"
+        : "Database & Analytics Services",
       question: isAr
         ? "هل تقدمون حلولًا لتحليل البيانات؟"
         : "Do you offer data analytics solutions?",
@@ -48,7 +50,9 @@ export default function Accordion({ language }: AccordionProps) {
         : "Yes, we provide advanced data analytics solutions using MySQL, Power BI, and Python.",
     },
     {
-      category: isAr ? "التحول الرقمي للمؤسسات الصغيرة" : "Digital Transformation for SMEs",
+      category: isAr
+        ? "التحول الرقمي للمؤسسات الصغيرة"
+        : "Digital Transformation for SMEs",
       question: isAr
         ? "كيف تساعدون المؤسسات الصغيرة في التحول الرقمي؟"
         : "How do you help SMEs in digital transformation?",
@@ -66,16 +70,15 @@ export default function Accordion({ language }: AccordionProps) {
 
   return (
     <section
+      data-aos="fade-up"
       className={`w-full px-6 md:px-20 py-16  bg-gray-50 ${
         isAr ? "text-right" : "text-left"
       }`}
     >
-  
       <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-10">
         {isAr ? "الأسئلة الشائعة" : "Frequently Asked Questions"}
       </h2>
 
-   
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-md divide-y divide-slate-200">
         {faqs.map((item, index) => (
           <div key={index} className="p-5">

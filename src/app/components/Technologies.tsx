@@ -36,7 +36,7 @@ export default function Technologies({ language }: TechnologiesProps) {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center   px-10 md:px-20  bg-gray-100">
+    <div className="flex flex-col items-center justify-center   px-10 md:px-20  bg-gray-100" data-aos="fade-up">
       {language === "ar" ? (
         <p className="text-4xl font-bold text-blue-800">التقنيات</p>
       ) : (

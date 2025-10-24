@@ -34,6 +34,7 @@ export default function Contact({ language }: ContactProps) {
 
   return (
     <section
+    data-aos="fade-up"
       className={`py-20 px-6 sm:px-10 bg-gray-50 text-gray-800 ${
         isArabic ? "text-right" : "text-left"
       }`}

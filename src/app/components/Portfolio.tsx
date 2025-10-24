@@ -85,7 +85,7 @@ export default function Portfolio({ language }: PortfolioProps) {
         ];
 
   return (
-    <section className="w-full bg-gray-100 py-16">
+    <section className="w-full bg-gray-100 py-16" >
       <div className="flex flex-col items-center mb-10">
         <h2 className="text-4xl font-bold text-blue-800">
           {language === "ar" ? "أعمالنا" : "Portfolio"}
@@ -99,6 +99,7 @@ export default function Portfolio({ language }: PortfolioProps) {
       <div className="flex flex-col gap-20 px-6 md:px-16">
         {portfolioItems.map((item, index) => (
           <div
+          data-aos="fade-up"
             key={index}
             className={`flex flex-col md:flex-row ${
               index % 2 === 1 ? "md:flex-row-reverse" : ""

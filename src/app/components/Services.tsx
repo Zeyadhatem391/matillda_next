@@ -10,7 +10,7 @@ export default function Services({ language }: ServicesProps) {
   const services =
     language === "ar"
       ? [
-          { title: "تصميم المواقع", image: "/images/Services/web.jpg" },
+          { title: "تصميم المواقع", image: "/images/Services/Web.jpg" },
           { title: "تطبيقات الموبايل", image: "/images/Services/mobile.jpg" },
           { title: "برامج سطح المكتب", image: "/images/Services/desktop.jpg" },
           {
@@ -44,7 +44,10 @@ export default function Services({ language }: ServicesProps) {
   return (
     <>
       <div className=" bg-gray-100">
-        <div className="flex flex-col items-center justify-center pt-10 ">
+        <div
+          className="flex flex-col items-center justify-center pt-10 "
+          data-aos="fade-up"
+        >
           {language === "ar" ? (
             <p className="text-4xl font-bold text-blue-800">خدماتنا</p>
           ) : (
@@ -61,6 +64,7 @@ export default function Services({ language }: ServicesProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <div
+                data-aos="fade-up"
                 key={index}
                 className="relative w-64 h-64 rounded-xl overflow-hidden group cursor-pointer shadow-lg"
               >

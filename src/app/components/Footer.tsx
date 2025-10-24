@@ -34,6 +34,7 @@ export default function Footer({ language }: FooterProps) {
     <footer
       dir={isArabic ? "rtl" : "ltr"}
       className="bg-gray-900 text-gray-400 py-10 px-6 sm:px-10"
+      data-aos="fade-up"
     >
       <div className="max-w-6xl mx-auto">
         {/* Logo */}
