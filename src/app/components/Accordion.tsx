@@ -71,7 +71,7 @@ export default function Accordion({ language }: AccordionProps) {
   return (
     <section
       data-aos="fade-up"
-      className={`w-full px-6 md:px-20 py-16  bg-gray-50 ${
+      className={`w-full px-6 md:px-20 py-16  bg-gray-100 ${
         isAr ? "text-right" : "text-left"
       }`}
     >

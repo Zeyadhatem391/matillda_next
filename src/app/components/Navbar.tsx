@@ -1,17 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 
+import { useLanguage } from "../context/LanguageContext";
 
-interface NavbarProps {
-  language: "ar" | "en";
-  toggleLanguage: () => void;
-}
 
-export default function Navbar({ language, toggleLanguage }: NavbarProps) {
- 
+export default function Navbar() {
+  const { language, toggleLanguage } = useLanguage();
+
   const [openDropdown, setOpenDropdown] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -26,16 +25,16 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
   const links =
     language === "ar"
       ? [
-          { text: "الرئيسية", href: "#" },
+          { text: "الرئيسية", href: "/" },
           {
             text: "خدماتنا",
             href: "#",
             dropdown: [
-              { text: "تصميم المواقع", href: "#" },
-              { text: "تطبيقات الموبايل", href: "#" },
-              { text: "برامج سطح المكتب", href: "#" },
-              { text: "خدمات قواعد البيانات والتحليلات", href: "#" },
-              { text: "التحول الرقمي للشركات الصغيرة والمتوسطة", href: "#" },
+              { text: "تصميم المواقع", href: "/web" },
+              { text: "تطبيقات الموبايل", href: "/mobile" },
+              { text: "برامج سطح المكتب", href: "/desktop" },
+              { text: "خدمات قواعد البيانات والتحليلات", href: "/database" },
+              { text: "التحول الرقمي للشركات الصغيرة والمتوسطة", href: "/digital" },
             ],
           },
           { text: "المشاريع", href: "#" },
@@ -43,16 +42,16 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
           { text: "تواصل معنا", href: "#" },
         ]
       : [
-          { text: "Home", href: "#" },
+          { text: "Home", href: "/" },
           {
             text: "Services",
             href: "#",
             dropdown: [
-              { text: "Web Development", href: "#" },
-              { text: "Mobile Apps", href: "#" },
-              { text: "Desktop Software", href: "#" },
-              { text: "Database & Analytics Services", href: "#" },
-              { text: "Digital Transformation for SMEs", href: "#" },
+              { text: "Web Development", href: "/web" },
+              { text: "Mobile Apps", href: "/mobile" },
+              { text: "Desktop Software", href: "/desktop" },
+              { text: "Database & Analytics Services", href: "/database" },
+              { text: "Digital Transformation for SMEs", href: "/digital" },
             ],
           },
           { text: "Projects", href: "#" },
@@ -62,9 +61,9 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
 
   return (
     <>
-      {/*  Navbar  i need ->  bg-[url('/images/hero_2.jpg')] bg-center bg-no-repeat bg-cover*/}
+     
       <nav
-        className="flex sticky top-0 w-full h-20 items-center justify-between  px-8 transition-all duration-500 z-50"
+        className="flex fixed top-0 w-full h-20 items-center justify-between  px-8 transition-all duration-500 z-50 bg-gray-800"
         dir={language === "ar" ? "rtl" : "ltr"}
       >
         {/* logo */}
@@ -80,7 +79,7 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
 
         {/* links */}
         <ul
-          className={` text-black text-lg font-medium transition-all duration-500 hidden lg:flex ${
+          className={` text-white text-lg font-medium transition-all duration-500 hidden lg:flex ${
             language === "ar" ? "flex-row-reverse mr-96" : "flex-row ml-96"
           }`}
         >
@@ -110,12 +109,12 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
                     >
                       {link.dropdown.map((item, subIndex) => (
                         <li key={subIndex}>
-                          <a
+                          <Link
                             href={item.href}
                             className="block px-4 py-2 hover:bg-gray-700 text-white"
                           >
                             {item.text}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -230,7 +229,7 @@ export default function Navbar({ language, toggleLanguage }: NavbarProps) {
           </button>
         </div>
 
-        {/* ✅ زر اللغة */}
+    
       </aside>
       
     </>

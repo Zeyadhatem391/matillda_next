@@ -22,7 +22,7 @@ export default function Video({ language }: VideoProps) {
   const content = videoText[language];
 
   return (
-    <section className="flex items-center justify-center px-6 md:px-20 py-16">
+    <section className="flex items-center justify-center px-6 md:px-20 py-16 bg-gray-100"   data-aos="fade-up">
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
     
         <div

@@ -1,14 +1,16 @@
 "use client";
 import Image from "next/image";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaGithub, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaGithub,
+  FaTwitter,
+} from "react-icons/fa";
+import { useLanguage } from "../context/LanguageContext";
+export default function Footer() {
+  const { language } = useLanguage();
 
-type Language = "ar" | "en";
-
-interface FooterProps {
-  language: Language;
-}
-
-export default function Footer({ language }: FooterProps) {
   const isArabic = language === "ar";
 
   const t = {
@@ -149,8 +151,8 @@ export default function Footer({ language }: FooterProps) {
         {/* Bottom */}
         <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
           <p>
-            © {new Date().getFullYear()} <span className="text-white">Matillda</span>.{" "}
-            {t.rights}
+            © {new Date().getFullYear()}{" "}
+            <span className="text-white">Matillda</span>. {t.rights}
           </p>
         </div>
       </div>
