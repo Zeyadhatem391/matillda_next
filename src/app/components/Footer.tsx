@@ -1,33 +1,25 @@
 "use client";
+
 import Image from "next/image";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaWhatsapp,
-  FaGithub,
-  FaTwitter,
-} from "react-icons/fa";
 import { useLanguage } from "../context/LanguageContext";
+
 export default function Footer() {
   const { language } = useLanguage();
-
   const isArabic = language === "ar";
 
   const t = {
     ar: {
-      resources: "الموارد",
-      follow: "تابعنا",
-      legal: "القانوني",
+      about: "من نحن",
       privacy: "سياسة الخصوصية",
-      terms: "الشروط والأحكام",
+      license: "الترخيص",
+      contact: "تواصل معنا",
       rights: "جميع الحقوق محفوظة.",
     },
     en: {
-      resources: "Resources",
-      follow: "Follow Us",
-      legal: "Legal",
+      about: "About",
       privacy: "Privacy Policy",
-      terms: "Terms & Conditions",
+      license: "Licensing",
+      contact: "Contact",
       rights: "All Rights Reserved.",
     },
   }[language];
@@ -35,126 +27,65 @@ export default function Footer() {
   return (
     <footer
       dir={isArabic ? "rtl" : "ltr"}
-      className="bg-gray-900 text-gray-400 py-10 px-6 sm:px-10"
+      className="bg-gray-800  shadow-sm text-center"
       data-aos="fade-up"
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Logo */}
-        <div className="flex flex-col sm:flex-row justify-between items-center border-b border-gray-700 pb-6">
-          <div className=" mb-4 sm:mb-0">
+      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between">
+          {/* الشعار */}
+          <a
+            href="#"
+            className={`flex items-center mb-4 sm:mb-0 space-x-3 ${
+              isArabic ? "space-x-reverse" : ""
+            }`}
+          >
             <Image
-              src="/images/logo.png"
+              src="https://flowbite.com/docs/images/logo.svg"
               alt="Logo"
-              width={40}
-              height={40}
-              className="rounded-md"
+              width={32}
+              height={32}
+              className="h-8 w-8"
             />
-          </div>
+            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+              Matillda
+            </span>
+          </a>
 
-          {/* Social Icons */}
-          <div className="flex gap-4 text-xl">
-            <a
-              href="#"
-              className="hover:text-blue-500 transition"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="#"
-              className="hover:text-pink-500 transition"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="#"
-              className="hover:text-green-500 transition"
-              aria-label="WhatsApp"
-            >
-              <FaWhatsapp />
-            </a>
-            <a
-              href="#"
-              className="hover:text-gray-200 transition"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="#"
-              className="hover:text-sky-400 transition"
-              aria-label="Twitter"
-            >
-              <FaTwitter />
-            </a>
-          </div>
+          {/* الروابط */}
+          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 ">
+            <li>
+              <a href="#" className="hover:underline me-4 md:me-6">
+                {t.about}
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline me-4 md:me-6">
+                {t.privacy}
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline me-4 md:me-6">
+                {t.license}
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                {t.contact}
+              </a>
+            </li>
+          </ul>
         </div>
 
-        {/* Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10 text-center sm:text-start">
-          <div>
-            <h3 className="text-white text-sm font-semibold mb-4 uppercase">
-              {t.resources}
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:text-white transition">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition">
-                  Technologies
-                </a>
-              </li>
-            </ul>
-          </div>
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
-          <div>
-            <h3 className="text-white text-sm font-semibold mb-4 uppercase">
-              {t.follow}
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:text-white transition">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition">
-                  Instagram
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white text-sm font-semibold mb-4 uppercase">
-              {t.legal}
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:text-white transition">
-                  {t.privacy}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition">
-                  {t.terms}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
-          <p>
-            © {new Date().getFullYear()}{" "}
-            <span className="text-white">Matillda</span>. {t.rights}
-          </p>
-        </div>
+        {/* الحقوق */}
+        <span className="block text-sm text-white sm:text-center ">
+          © {new Date().getFullYear()}{" "}
+          <a href="#" className="hover:underline text-white">
+            Matillda
+          </a>{" "}
+          {t.rights}
+        </span>
       </div>
     </footer>
   );

@@ -99,7 +99,7 @@ export default function Hero() {
   return (
     <section
       dir={language === "ar" ? "rtl" : "ltr"}
-      className=" lg:grid lg:h-screen lg:place-content-center"
+      className=" lg:grid lg:h-screen lg:place-content-center pt-36 "
     >
       <div className="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-prose text-center">

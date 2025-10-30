@@ -93,7 +93,7 @@ export default function Navbar() {
                   >
                     {link.text}
                     <FaChevronDown
-                      className={`transition-transform duration-300 ${
+                      className={`transition-transform duration-300  ${
                         openDropdown ? "rotate-180" : ""
                       }`}
                       size={12}
@@ -140,7 +140,7 @@ export default function Navbar() {
           {language === "ar" ? "English" : "العربية"}
         </button>
 
-        <button onClick={toggleMenu} className="text-black text-2xl lg:hidden">
+        <button onClick={toggleMenu} className="text-white text-2xl lg:hidden">
           <FaBars />
         </button>
       </nav>

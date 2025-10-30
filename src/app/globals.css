@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+
+
+body {
+  font-family: 'Tajawal', 'Inter', sans-serif;
+  
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -142,6 +151,7 @@
   width: max-content;
   animation: slide 45s linear infinite;
 }
+
 /* Technologies end  */
 
 .btn {
