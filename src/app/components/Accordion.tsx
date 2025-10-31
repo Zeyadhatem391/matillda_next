@@ -71,30 +71,35 @@ export default function Accordion({ language }: AccordionProps) {
   return (
     <section
       data-aos="fade-up"
-      className={`w-full px-6 md:px-20 py-16  bg-gray-100 ${
+      className={`w-full px-6 md:px-20 py-20 bg-gray-900 ${
         isAr ? "text-right" : "text-left"
-      }`}
+      } text-gray-100`}
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-10">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
         {isAr ? "الأسئلة الشائعة" : "Frequently Asked Questions"}
       </h2>
 
-      <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-md divide-y divide-slate-200">
+      <div className="max-w-3xl mx-auto divide-y divide-gray-700 bg-gray-800/60 backdrop-blur-md rounded-2xl shadow-lg border border-gray-700">
         {faqs.map((item, index) => (
-          <div key={index} className="p-5">
+          <div
+            key={index}
+            className={`transition-all duration-500 ${
+              openIndex === index ? "bg-gray-800/80" : ""
+            }`}
+          >
             <button
               onClick={() => toggle(index)}
-              className="w-full flex justify-between items-center text-slate-800 text-lg font-medium focus:outline-none"
+              className="w-full flex justify-between items-center text-gray-200 text-lg font-medium py-5 px-6 focus:outline-none hover:text-white transition-colors"
             >
               <span>
-                <span className="text-blue-600 font-semibold">
+                <span className="text-blue-400 font-semibold">
                   {item.category}:
                 </span>{" "}
                 {item.question}
               </span>
               <svg
                 className={`w-5 h-5 transition-transform duration-300 ${
-                  openIndex === index ? "rotate-180" : ""
+                  openIndex === index ? "rotate-180 text-blue-400" : "text-gray-400"
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -111,10 +116,10 @@ export default function Accordion({ language }: AccordionProps) {
 
             <div
               className={`overflow-hidden transition-all duration-500 ${
-                openIndex === index ? "max-h-40 mt-3" : "max-h-0"
+                openIndex === index ? "max-h-40 px-6 pb-5" : "max-h-0"
               }`}
             >
-              <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed border-t border-gray-700 pt-4">
                 {item.answer}
               </p>
             </div>

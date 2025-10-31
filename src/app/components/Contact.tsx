@@ -34,49 +34,49 @@ export default function Contact({ language }: ContactProps) {
 
   return (
     <section
-    data-aos="fade-up"
-      className={`py-20 px-6 sm:px-10 bg-gray-100 text-gray-800 ${
+      data-aos="fade-up"
+      className={`py-20 px-6 sm:px-10 bg-gray-900 text-gray-100 ${
         isArabic ? "text-right" : "text-left"
       }`}
       dir={isArabic ? "rtl" : "ltr"}
     >
       <div className="max-w-3xl mx-auto text-center mb-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 pb-3">
+        <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300 pb-3">
           {t.title}
         </h2>
-        <p className="mt-3 text-gray-600">{t.subtitle}</p>
+        <p className="mt-3 text-gray-400">{t.subtitle}</p>
       </div>
 
-      <form className="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl p-6 sm:p-10 space-y-6">
+      <form className="max-w-3xl mx-auto bg-gray-800 shadow-xl rounded-2xl p-6 sm:p-10 space-y-6 border border-gray-700">
         <div className="grid sm:grid-cols-2 gap-6">
           <input
             type="text"
             placeholder={t.name}
-            className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <input
             type="email"
             placeholder={t.email}
-            className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <input
           type="text"
           placeholder={t.subject}
-          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <textarea
           rows={5}
           placeholder={t.message}
-          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
         ></textarea>
 
         <div className="text-center">
           <button
             type="submit"
-            className="bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:opacity-90 transition"
+            className="bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:opacity-90 transition"
           >
             {t.button}
           </button>

@@ -7,7 +7,8 @@
 
 body {
   font-family: 'Tajawal', 'Inter', sans-serif;
-  
+  background-color: #111827;
+
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -132,6 +133,14 @@ body {
   }
 }
 
+/* portfolio */
+.portfolio-swiper .swiper-slide {
+  transition: transform 0.5s ease;
+}
+
+.portfolio-swiper .swiper-slide-active img {
+  transform: scale(1.1);
+}
 
 
 

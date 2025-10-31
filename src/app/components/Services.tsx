@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 type Language = "ar" | "en";
@@ -10,7 +11,7 @@ export default function Services({ language }: ServicesProps) {
   const services =
     language === "ar"
       ? [
-          { title: "تصميم المواقع", image: "/images/Services/Web.jpg" },
+          { title: "تصميم المواقع", image: "/images/Services/web.jpg" },
           { title: "تطبيقات الموبايل", image: "/images/Services/mobile.jpg" },
           { title: "برامج سطح المكتب", image: "/images/Services/desktop.jpg" },
           {
@@ -42,52 +43,48 @@ export default function Services({ language }: ServicesProps) {
         ];
 
   return (
-    <>
-      <div className=" bg-gray-100">
-        <div
-          className="flex flex-col items-center justify-center pt-10 "
-          data-aos="fade-up"
-        >
-          {language === "ar" ? (
-            <p className="text-4xl font-bold text-blue-800">خدماتنا</p>
-          ) : (
-            <p className="text-4xl font-bold text-blue-800">Services</p>
-          )}
-
-          <div className="mt-3">
-            <div className="w-28 h-1 bg-blue-600 mx-auto mb-1.5"></div>
-            <div className="w-36 h-1 bg-blue-600 mx-auto"></div>
-          </div>
-        </div>
-
-        <div className="py-20 w-full flex justify-center items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <div
-                data-aos="fade-up"
-                key={index}
-                className="relative w-64 h-64 rounded-xl overflow-hidden group cursor-pointer shadow-lg"
-              >
-                {/* image */}
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-
-                {/* filter */}
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-500"></div>
-
-                {/*  Text */}
-                <div className="absolute inset-0 flex items-center justify-center text-white text-xl font-semibold text-center px-3">
-                  {service.title}
-                </div>
-              </div>
-            ))}
-          </div>
+    <section className=" bg-gray-900  py-24 px-6 md:px-12 text-white">
+      {/* العنوان */}
+      <div className="text-center mb-16" data-aos="fade-up">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300 pb-3 tracking-wide">
+          {language === "ar" ? "خدماتنا" : "Our Services"}
+        </h2>
+        <div className="flex flex-col items-center gap-1">
+          <div className="w-24 h-1 bg-amber-500 rounded"></div>
+          <div className="w-40 h-1 bg-blue-600 rounded"></div>
         </div>
       </div>
-    </>
+
+      {/* الكروت */}
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 justify-items-center"
+        data-aos="fade-up"
+      >
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="relative w-72 h-72 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-500 group bg-gray-700"
+          >
+            {/* الصورة */}
+            <Image
+              src={service.image}
+              alt={service.title}
+              fill
+              className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+            />
+
+            {/* فلتر */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-black/50 transition-all duration-500"></div>
+
+            {/* النص */}
+            <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
+              <h3 className="text-white text-xl md:text-2xl font-semibold drop-shadow-lg">
+                {service.title}
+              </h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

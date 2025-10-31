@@ -39,7 +39,7 @@ export default function Navbar() {
           },
           { text: "المشاريع", href: "#" },
           { text: "من نحن", href: "#" },
-          { text: "تواصل معنا", href: "#" },
+          { text: "تواصل معنا", href: "/contact" },
         ]
       : [
           { text: "Home", href: "/" },
@@ -56,7 +56,7 @@ export default function Navbar() {
           },
           { text: "Projects", href: "#" },
           { text: "About", href: "#" },
-          { text: "Contact", href: "#" },
+          { text: "Contact", href: "/contact" },
         ];
 
   return (
